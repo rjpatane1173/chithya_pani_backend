@@ -1,0 +1,6 @@
+services:
+  - type: web
+    name: django-backend
+    env: python
+    buildCommand: "pip install -r requirements.txt"
+    startCommand: "gunicorn chithya_pani_backend.wsgi:application"
