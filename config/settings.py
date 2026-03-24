@@ -81,12 +81,19 @@ ASGI_APPLICATION = 'config.asgi.application'
 # }
 
 # PostgreSQL Local
+# DATABASES = {
+#     'default': dj_database_url.parse(
+#         os.environ.get(
+#             "DATABASE_URL",
+#             "postgresql://postgres:root@localhost:5432/chithyapani"
+#         )
+#     )
+# }
+
+
 DATABASES = {
-    'default': dj_database_url.parse(
-        os.environ.get(
-            "DATABASE_URL",
-            "postgresql://postgres:root@localhost:5432/chithyapani"
-        )
+    'default': dj_database_url.config(
+        default='sqlite:///db.sqlite3'
     )
 }
 
